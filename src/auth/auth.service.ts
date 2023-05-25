@@ -29,8 +29,8 @@ export class AuthService {
     }
 
     return {
-      access_token: this.jwtService.sign({ ...new LoginPayloadDto(user) }),
       user: new ResponseUserDto(user),
+      access_token: this.jwtService.sign({ ...new LoginPayloadDto(user) }),
     };
   }
 }
