@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 import { Repository } from 'typeorm';
@@ -13,6 +17,14 @@ export class UserService {
   ) {}
 
   async createUser(createUserDto: CreateUserDto): Promise<UserEntity> {
+    const user = await this.findUserByEmail(createUserDto?.email).catch(
+      () => undefined,
+    );
+
+    if (user) {
+      throw new UnprocessableEntityException('email already exists');
+    }
+
     const hash = await bcrypt.hash(createUserDto.password, 10);
 
     return await this.userRepository.save({
