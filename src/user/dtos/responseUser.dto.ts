@@ -1,4 +1,4 @@
-import { ResponseAddressDto } from 'src/address/dtos/responseAddress.dto';
+import { ResponseAddressDto } from '../../address/dtos/responseAddress.dto';
 import { UserEntity } from './../entities/user.entity';
 
 export class ResponseUserDto {

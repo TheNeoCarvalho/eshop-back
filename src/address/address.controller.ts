@@ -5,10 +5,10 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { AddressEntity } from 'src/address/entities/address.entity';
-import { Roles } from 'src/docorators/roles.decorato';
-import { UserId } from 'src/docorators/userId.decotator';
-import { UserType } from 'src/user/dtos/userType.enum';
+import { AddressEntity } from '../address/entities/address.entity';
+import { Roles } from '../docorators/roles.decorato';
+import { UserId } from '../docorators/userId.decotator';
+import { UserType } from '../user/dtos/userType.enum';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './dtos/createAddress.dto';
 
