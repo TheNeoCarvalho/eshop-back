@@ -3,10 +3,10 @@ import { CityEntity } from '../entities/city.entity';
 
 export class ResponseCityDto {
   name: string;
-  states?: ResponseStateDto;
+  state?: ResponseStateDto;
 
   constructor(city: CityEntity) {
     this.name = city.name;
-    this.states = city.state ? new ResponseStateDto(city.state) : undefined;
+    this.state = city.state ? new ResponseStateDto(city.state) : undefined;
   }
 }
