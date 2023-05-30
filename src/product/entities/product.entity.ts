@@ -1,4 +1,3 @@
-import { CategoryEntity } from 'src/category/entities/category.entity';
 import {
   Column,
   Entity,
@@ -6,6 +5,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { CategoryEntity } from '../../category/entities/category.entity';
 
 @Entity({ name: 'product' })
 export class ProductEntity {
